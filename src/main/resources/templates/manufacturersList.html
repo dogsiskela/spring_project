@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Balloon Order page - Welcome and choose a Balloon</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to our Balloon Shop App</h1>
+        <div style="display:grid; grid-template-columns: 40vw 20vw 20vw;" th:each="manufacturer : ${manufacturers}">
+            <div th:text="${manufacturer}"></div>
+            <form th:action="@{/manufacturers/edit/{id}(id=${manufacturer.getId()})}" method="GET">
+                <input type="submit" value="Edit">
+            </form>
+            <form th:action="@{/manufacturers/delete/{id}(id=${manufacturer.getId()})}" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+    </header>
+</body>
+
+</html>

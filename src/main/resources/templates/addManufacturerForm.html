@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>WP lab - Add Manufacturer</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 3px 2px;
+        }
+
+        section {
+            float: left;
+            margin: 0 1.5%;
+            width: 63%;
+        }
+
+        aside {
+            float: right;
+            margin: 0 1.5%;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Add manufacturer</h1>
+    </header>
+    <section>
+
+        <form method="post">
+            <label for="manufacturerName">Manufacturer name:</label><br />
+            <input th:value="${manufacturerName}" type="text" id="manufacturerName" name="manufacturerName" /><br />
+            <label for="manufacturerCountry">Manufacturer country:</label><br />
+            <input th:value="${manufacturerCountry}" type="text" id="manufacturerCountry"
+                name="manufacturerCountry" /><br />
+            <label for="manufacturerAddress">Manufacturer address:</label><br />
+            <input th:value="${manufacturerAddress}" type="text" id="manufacturerAddress"
+                name="manufacturerAddress" /><br />
+            <input type="submit" value="Submit">
+        </form>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>WP lab - Add Balloon</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 3px 2px;
+        }
+
+        section {
+            float: left;
+            margin: 0 1.5%;
+            width: 63%;
+        }
+
+        aside {
+            float: right;
+            margin: 0 1.5%;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Create balloon</h1>
+    </header>
+    <section>
+
+        <form method="post">
+            <label for="balloonName">Balloon name:</label><br />
+            <input th:value="${balloonName}" type="text" id="balloonName" name="balloonName" /><br />
+            <label for="balloonDescription">Balloon description:</label><br />
+            <input th:value="${balloonDescription}" type="text" id="balloonDescription"
+                name="balloonDescription" /><br />
+            <select id="manufacturer" name="manufacturerId">
+                <option th:each="manufacturer : ${manufacturers}" th:value="${manufacturer.getId()}"
+                    th:text="${manufacturer}">
+                </option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </section>
+</body>
+
+</html>
